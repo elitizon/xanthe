@@ -1,0 +1,31 @@
+{
+  "name": "format-validator",
+  "version": "0.0.1",
+  "author": {
+    "email": "contact@elitizon.com",
+    "name": "elitizon"
+  },
+  "license": "MIT",
+  "description": "A library to validate common formats such as emails, numbers, phone numbers, and IP addresses",
+  "contributors": [
+    "raphaelmansuy"
+  ],
+  "keywords": [
+    "format",
+    "validator",
+    "email validation",
+    "phone number validation",
+    "IP address validation"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "yarn build && jest",
+    "coverage": "jest --coverage"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^26.4.2",
+    "ts-jest": "^26.3.0",
+    "typescript": "^4.0.2"
+  }
+}
