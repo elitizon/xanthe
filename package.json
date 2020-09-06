@@ -1,6 +1,6 @@
 {
   "name": "xanthe",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": {
     "email": "contact@elitizon.com",
     "name": "raphaelmansuy"
@@ -25,8 +25,7 @@
   "scripts": {
     "build": "tsc",
     "test": "yarn build && jest",
-    "coverage": "jest --coverage",
-    "publish": "npm publish --access=public"
+    "coverage": "jest --coverage"
   },
   "dependencies": {},
   "devDependencies": {
