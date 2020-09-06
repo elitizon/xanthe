@@ -1,12 +1,12 @@
 {
-  "name": "format-validator",
+  "name": "simple-format-validator",
   "version": "0.0.1",
   "author": {
     "email": "contact@elitizon.com",
-    "name": "elitizon"
+    "name": "raphaelmansuy"
   },
   "license": "MIT",
-  "description": "A library to validate common formats such as emails, numbers, phone numbers, and IP addresses",
+  "description": "A library to validate common formats such as emails, and IP addresses",
   "contributors": [
     "raphaelmansuy"
   ],
@@ -14,13 +14,20 @@
     "format",
     "validator",
     "email validation",
-    "phone number validation",
     "IP address validation"
   ],
+  "repository": {
+    "url": "https://github.com/elitizon/simple-format-validator.git",
+    "type": ""
+  },
+  "main": "./build/index.js",
+  "type": "./build/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "yarn build && jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "prepublish": "tsc",
+    "publish": "npm publish --access=public"
   },
   "dependencies": {},
   "devDependencies": {

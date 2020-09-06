@@ -1,4 +1,4 @@
-# A format validator library
+# A simple format validator library
 
 ## Content
 
@@ -12,13 +12,13 @@ This library contains a set of functions to validate the following commons data 
 ### Install
 
 ```ts
-yarn add format-validator
+yarn add simple-format-validator
 ```
 
 ### Use
 
 ```ts
-import { isEmail, isIPv4 } from "format-validator"
+import { isEmail, isIPv4 } from "simple-format-validator"
 
 const email = "tom@perdu.com"
 console.log(isEmail(email))

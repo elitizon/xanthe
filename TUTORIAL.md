@@ -111,7 +111,7 @@ module.exports = {
 }
 ```
 
-The **build command** will generate the commonjs files in the *./build/* directory
+The **build command** will generate the CommonJS files in the *./build/* directory
 
 ### Creation of the validations functions
 
@@ -241,7 +241,7 @@ yarn build
 ```
 
 ```bash
-yarn tests
+yarn test
 ```
 
 #### Execute the tests coverage
@@ -279,5 +279,57 @@ git *
 ```bash
 git commit -m "First commit"
 ```
+
+### Publish the file to a Github repository
+
+An empty Github project must be created before publishing.
+
+The file ```package.json``` need to be updated as follow:
+
+```json
+  "repository": {
+    "url": "https://github.com/myorganisation/simple-format-validator.git",
+    "type": ""
+  },
+```
+
+> *myorganisation* represents your Github account
+
+We can know set the Github project as the remote representation of the local project, and push the local master branch to the remote server (origin).
+
+```bash
+git remote add origin`https://github.com/myorganisation/simple-format-validator.git
+git branch -M master
+git push -u origin master
+```
+
+### Publish to npmjs.org
+
+An account must be created before publishing a package in the npm registry.
+
+- Once the account created you need to log into
+
+```bash
+npm login
+```
+
+- Enter your username, password, and email address registered on npmjs.org
+
+- Modify the ```package.json``as follow
+
+```json
+  "scripts": {
+    "build": "tsc",
+    "test": "yarn build && jest",
+    "coverage": "jest --coverage",
+    "prepublish": "tsc",
+    "publish": "npm publish --access=public"
+  },
+```
+
+We have added the **publish** script to publish to npmjs.org with public access.
+
+- We can now publish to the library to npmjs.org
+
 
 
