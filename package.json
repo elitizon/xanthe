@@ -1,6 +1,6 @@
 {
-  "name": "simple-format-validator",
-  "version": "0.0.1",
+  "name": "xanthe",
+  "version": "0.0.2",
   "author": {
     "email": "contact@elitizon.com",
     "name": "raphaelmansuy"
@@ -17,7 +17,7 @@
     "IP address validation"
   ],
   "repository": {
-    "url": "https://github.com/elitizon/simple-format-validator.git",
+    "url": "https://github.com/elitizon/xanthe.git",
     "type": ""
   },
   "main": "./build/index.js",

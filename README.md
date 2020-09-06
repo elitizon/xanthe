@@ -1,4 +1,4 @@
-# A simple format validator library
+# Xanthe is a simple format validator library
 
 ## Content
 
@@ -12,13 +12,13 @@ This library contains a set of functions to validate the following commons data 
 ### Install
 
 ```ts
-yarn add simple-format-validator
+yarn add xanthe
 ```
 
 ### Use
 
 ```ts
-import { isEmail, isIPv4 } from "simple-format-validator"
+import { isEmail, isIPv4 } from "xanthe"
 
 const email = "tom@perdu.com"
 console.log(isEmail(email))
