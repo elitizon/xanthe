@@ -327,9 +327,15 @@ npm login
   },
 ```
 
-We have added the **publish** script to publish to npmjs.org with public access.
+> We have added the **publish** script to publish to npmjs.org with public access.
 
 - We can now publish to the library to npmjs.org
+
+```bash
+yarn publish
+```
+
+A few questions will be asked such as the new version number 0.0.0.1
 
 
 

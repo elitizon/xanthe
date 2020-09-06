@@ -7,6 +7,8 @@ This library contains a set of functions to validate the following commons data 
 - an email address
 - an IP V4 address
 
+> Xanthe means “golden” or “yellow” in Greek. Xanthe is an exotic epithet of Demeter, goddess of the harvest and agriculture.
+
 ## HOW TO
 
 ### Install
