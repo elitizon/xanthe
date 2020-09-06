@@ -6,15 +6,18 @@
 
 - How to configure a typescript package from zero
 - How to add the support of Jest for the unit tests
-- How to publish the library in [npmjs.com](https://www.npmjs.com/)
 - How to generate the tests coverage
-- How to use the package once it has been published
+- How to publish the library in [npmjs.com](https://www.npmjs.com/)
+
+Let's create a simple library to validate emails and IPv4 addresses. The name of this library will be **xanthe**.
+
+> ️Xanthe means “golden” or “yellow” in Greek. Xanthe is an exotic epithet of Demeter, goddess of the harvest and agriculture 🇬🇷🧚‍♀
 
 ### Create a package.json file
 
 ```json
 {
-  "name": "format-validator",
+  "name": "xanthe",
   "version": "0.0.1",
   "author": {
     "email": "contact@elitizon.com",
@@ -29,7 +32,6 @@
     "format",
     "validator",
     "email validation",
-    "phone number validation",
     "IP address validation"
   ],
   "dependencies": {},
@@ -41,8 +43,11 @@
 ### Install typescript as a development dependencies
 
 ```bash
-yarn add -D typescript
+yarn add -D typescript @types/node
 ```
+
+> ```@types/node``` contains type definitions for Node.js
+> ```typescript``` contains the typescript compiler
 
 ### Create the src and test directory
 
@@ -99,15 +104,16 @@ module.exports = {
 ```json
 {
   "compilerOptions": {
-    /* Visit https://aka.ms/tsconfig.json to read more about this file */
-    "target": "es5",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
-    "module": "commonjs",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
-    "outDir": "./build",                        /* Redirect output structure to the directory. */
-    "strict": true,                           /* Enable all strict type-checking options. */
-    /* Advanced Options */
-    "skipLibCheck": true,                     /* Skip type checking of declaration files. */
-    "forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
-  }
+    "target": "es5" ,
+    "module": "commonjs",
+    "outDir": "./build",
+    "strict": true,
+    "esModuleInterop": true ,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true
+  },
+  "exclude": ["node_modules", "build", "tests"]
 }
 ```
 
@@ -167,7 +173,7 @@ import { isIPv4 } from "./validators/ipv4"
 export { isEmail, isIPv4 }
 ```
 
-Our module is now nearly ready lets create the unit tests.
+Our module is now nearly ready. Let's create the unit tests.
 
 ### Creation of the unit tests
 
@@ -250,7 +256,7 @@ yarn test
 yarn coverage
 ```
 
-A *coverage* has been generated with all the information about the tests coverage
+> A *coverage* has been generated with all the information about the tests coverage
 
 ### Creation of git repository
 
@@ -288,7 +294,7 @@ The file ```package.json``` need to be updated as follow:
 
 ```json
   "repository": {
-    "url": "https://github.com/myorganisation/simple-format-validator.git",
+    "url": "https://github.com/myorganisation/xanthe.git",
     "type": ""
   },
 ```
@@ -298,7 +304,7 @@ The file ```package.json``` need to be updated as follow:
 We can know set the Github project as the remote representation of the local project, and push the local master branch to the remote server (origin).
 
 ```bash
-git remote add origin`https://github.com/myorganisation/simple-format-validator.git
+git remote add origin`https://github.com/myorganisation/xanthe.git
 git branch -M master
 git push -u origin master
 ```
@@ -315,19 +321,14 @@ npm login
 
 - Enter your username, password, and email address registered on npmjs.org
 
-- Modify the ```package.json``as follow
+- Add a new file **.npmignore** to exclude some files from the publication
 
-```json
-  "scripts": {
-    "build": "tsc",
-    "test": "yarn build && jest",
-    "coverage": "jest --coverage",
-    "prepublish": "tsc",
-    "publish": "npm publish --access=public"
-  },
+```text
+README.md
+TUTORIAL.md
+jest.config.json
+tests/
 ```
-
-> We have added the **publish** script to publish to npmjs.org with public access.
 
 - We can now publish to the library to npmjs.org
 
@@ -335,7 +336,7 @@ npm login
 yarn publish
 ```
 
-A few questions will be asked such as the new version number 0.0.0.1
+A few questions will be asked such as the new version number 0.0.1
 
 
-
+And voila our component is published and visible 🥳
